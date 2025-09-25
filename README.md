@@ -80,11 +80,11 @@ Desenvolver um sistema multiplataforma que conecte feirantes e consumidores, per
 
 | Nome               | Matrícula |
 |--------------------|-----------|
-| Ricardo Monteiro   | 202301    |
-| Ana Bezerra        | 202302    |
-| Carlos Henrique    | 202303    |
-| Juliana Lopes      | 202304    |
-| Mateus Ferreira    | 202305    |
+| Ricardo Montesuma Filho   | 2327749    |
+| Marcos Guilherme Rabelo        | 2317776    |
+| Fernando Ivo Negreiro da Silva    | 2317776    |
+| Carlos Roberto Pereira da Silva Filho       | 2326155    |
+| Antônia Tamires Melo de Sousa    | 2314703    |
 
 ---
 
