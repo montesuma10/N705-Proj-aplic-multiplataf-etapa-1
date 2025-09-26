@@ -152,10 +152,7 @@ O projeto **ConectaFeira** será desenvolvido utilizando tecnologias modernas e 
 - **Postman** – Testes e documentação das APIs.  
 - **GitHub Projects** – Organização de tarefas, versionamento de código e colaboração.
 
-
 ---
----
-
 
 ## 👨‍💻 Equipe do projeto e seus papéis na Equipe
 
