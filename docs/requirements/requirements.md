@@ -81,3 +81,21 @@
 5. Cada consumidor pode **avaliar um feirante apenas uma vez por dia**, evitando spam.  
 
 6. O sistema deve permitir a alteração de status de um feirante (ativo/inativo).  
+---
+
+## 📝 Histórias de Usuário
+- **Consumidor:**  
+  - "Como consumidor, quero buscar um produto pelo nome, para saber em quais feiras ele está disponível hoje."  
+  - "Como consumidor, quero consultar a agenda de um feirante, para planejar minhas compras semanais."  
+  - "Como consumidor, quero avaliar um feirante, para compartilhar minha experiência."  
+
+- **Feirante:**  
+  - "Como feirante, quero cadastrar meus produtos, para divulgar o que vendo nas feiras."  
+  - "Como feirante, quero fazer check-in diário, para informar aos clientes que estou presente na feira."  
+  - "Como feirante, quero gerenciar minha agenda semanal, para organizar minha rotina de vendas."  
+
+- **Administrador:**  
+  - "Como administrador, quero cadastrar novas feiras, para expandir o alcance da plataforma."  
+  - "Como administrador, quero gerenciar feirantes, para garantir confiabilidade e segurança no sistema."  
+
+---
