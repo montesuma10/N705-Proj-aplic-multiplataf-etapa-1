@@ -74,29 +74,28 @@ Fluxo principal:
 ---
 
 ## 🔹 Diagrama da Arquitetura
-
-```mermaid
 flowchart TD
     subgraph CLIENTS
         Web[React.js - Web App]
         Mobile[React Native - Mobile App]
     end
 
-    subgraph API[Backend - Node.js + Express]
+    subgraph API [Backend - Node.js + Express]
         Routes[Rotas REST]
         Services[Regras de Negócio]
         Repositories[ORM Sequelize]
         Auth[Autenticação JWT]
     end
 
-    subgraph DB[(MySQL Database)]
+    subgraph DB [MySQL Database]
         Tables[(Feiras, Feirantes, Produtos, Agendas, Checkins, Avaliações)]
     end
 
-    subgraph CACHE[(Redis - opcional)]
+    subgraph CACHE [Redis - opcional]
     end
 
     Web -->|HTTP JSON| API
     Mobile -->|HTTP JSON| API
     API --> DB
     API --> CACHE
+
