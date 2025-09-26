@@ -74,6 +74,7 @@ Fluxo principal:
 ---
 
 ## 🔹 Diagrama da Arquitetura
+```mermaid
 flowchart TD
     subgraph CLIENTS
         Web[React.js - Web App]
@@ -98,4 +99,5 @@ flowchart TD
     Mobile -->|HTTP JSON| API
     API --> DB
     API --> CACHE
+    ```
 
