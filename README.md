@@ -90,6 +90,82 @@ Desenvolver um sistema multiplataforma que conecte feirantes e consumidores, per
 
 ---
 
+## 🏗️ Visão Geral da Arquitetura
+
+A arquitetura do **ConectaFeira** segue o modelo **cliente-servidor** baseado em APIs RESTful.  
+Ela é composta por três camadas principais:
+
+- **Frontend Web (React.js + Tailwind CSS):**  
+  Interface administrativa para cadastro e gestão de feiras, feirantes e produtos.  
+
+- **Aplicativo Mobile (React Native / Android Studio):**  
+  Voltado para consumidores e feirantes, permitindo busca de produtos, check-in diário e avaliação.  
+
+- **Backend (Node.js + Express + MySQL):**  
+  API centralizada responsável por autenticação, regras de negócio e persistência de dados.  
+
+---
+
+### 🔹 Diagrama da Arquitetura
+
+```mermaid
+flowchart LR
+    subgraph MobileApp["📱 Aplicativo Mobile (React Native)"]
+    end
+
+    subgraph WebApp["💻 Frontend Web (React.js)"]
+    end
+
+    subgraph Backend["🖥️ Backend API (Node.js + Express)"]
+    A[Autenticação JWT]
+    B[Serviços de Negócio]
+    C[Gerenciamento de Produtos]
+    D[Check-in & Agenda]
+    end
+
+    subgraph Database["🗄️ Banco de Dados (MySQL)"]
+    T1[(Usuários)]
+    T2[(Feiras)]
+    T3[(Feirantes)]
+    T4[(Produtos)]
+    T5[(Avaliações)]
+    end
+
+    MobileApp --> Backend
+    WebApp --> Backend
+    Backend --> Database
+```
+---
+## 💻 Tecnologias Propostas
+
+O projeto **ConectaFeira** será desenvolvido utilizando tecnologias modernas e de fácil manutenção, garantindo escalabilidade e boa experiência para usuários de diferentes perfis (administradores, feirantes e consumidores).
+
+### 🔹 Frontend Web
+- **React.js** – Biblioteca JavaScript para construção de interfaces web dinâmicas.  
+- **Tailwind CSS** – Framework de estilização para componentes responsivos e modernos.  
+- **Axios** – Cliente HTTP para comunicação com a API.  
+
+### 🔹 Mobile
+- **React Native** (ou Android Studio com Java, caso necessário) – Desenvolvimento de aplicativo multiplataforma para Android e iOS.  
+- **Expo** – Ferramenta para agilizar o desenvolvimento mobile e testes.  
+
+### 🔹 Backend
+- **Node.js** – Ambiente de execução JavaScript para o servidor.  
+- **Express.js** – Framework web para criação da API RESTful.  
+- **JWT (JSON Web Token)** – Autenticação e autorização segura.  
+
+### 🔹 Banco de Dados
+- **MySQL** – Banco de dados relacional, já familiar para a equipe, garantindo robustez e confiabilidade.  
+- **Sequelize ORM** – Abstração para modelagem de dados e integração com o MySQL.  
+
+### 🔹 Outras Ferramentas
+- **Docker** – Containerização para padronizar ambientes de desenvolvimento e produção.  
+- **Postman** – Testes e documentação das APIs.  
+- **GitHub Projects** – Organização de tarefas, versionamento de código e colaboração.
+
+
+---
+
 ## 📆 Cronograma de Desenvolvimento
 
 | Etapa                          | Período                 |
@@ -102,7 +178,6 @@ Desenvolver um sistema multiplataforma que conecte feirantes e consumidores, per
 | Integração e Testes             | 16/11 – 18/11           |
 | Revisão Final e Entrega         | 19/11 – 20/11           |
 
----
 
 
 ---
