@@ -53,6 +53,18 @@ Desenvolver um sistema multiplataforma que conecte feirantes e consumidores, per
 - **Equipe de Desenvolvimento:** responsável pela construção e manutenção do sistema.  
 
 ---
+## 🌍 Relação com os Objetivos de Desenvolvimento Sustentável (ODS 11)
+
+O projeto **ConectaFeira** está alinhado com o **ODS 11 – Cidades e Comunidades Sustentáveis**, pois busca fortalecer a economia local e melhorar a qualidade de vida em áreas urbanas.  
+
+### 📌 Contribuições do ConectaFeira para o ODS 11:
+- **Promoção da economia local:** valoriza o trabalho de pequenos produtores e feirantes, ampliando sua visibilidade e alcance.  
+- **Consumo responsável:** aproxima consumidores de produtos frescos e sazonais, incentivando escolhas mais saudáveis e sustentáveis.  
+- **Comunidades mais inclusivas:** facilita o acesso da população às feiras, promovendo a integração entre moradores e comerciantes locais.  
+- **Cidades mais inteligentes:** utiliza tecnologia para organizar informações sobre feiras e produtos, tornando o espaço urbano mais eficiente e acessível.  
+
+> 💡 Com isso, o ConectaFeira não apenas digitaliza a relação entre feirantes e consumidores, mas também contribui para a construção de **cidades mais inclusivas, seguras, resilientes e sustentáveis**.
+---
 
 ## 📂 Estrutura do Repositório
 
