@@ -81,7 +81,6 @@ Desenvolver um sistema multiplataforma que conecte feirantes e consumidores, per
 
 ## 🏗️ Visão Geral da Arquitetura
 
-# 🏛️ Arquitetura do Sistema - ConectaFeira
 
 ## 🔹 Descrição da Arquitetura
 O sistema **ConectaFeira** adota uma arquitetura baseada no padrão **cliente-servidor** e **API RESTful**, separando claramente frontend, backend e banco de dados.  
@@ -144,8 +143,9 @@ O projeto **ConectaFeira** será desenvolvido utilizando tecnologias modernas e 
 - **Axios** – Cliente HTTP para comunicação com a API.  
 
 ### 🔹 Mobile
-- **React Native** (ou Android Studio com Java, caso necessário) – Desenvolvimento de aplicativo multiplataforma para Android e iOS.  
+- **React Native** – Desenvolvimento mobile multiplataforma (Android e iOS).  
 - **Expo** – Ferramenta para agilizar o desenvolvimento mobile e testes.  
+- **Android Studio (Java)** – Considerado como alternativa caso necessário um desenvolvimento focado apenas em Android.  
 
 ### 🔹 Backend
 - **Node.js** – Ambiente de execução JavaScript para o servidor.  
@@ -153,8 +153,9 @@ O projeto **ConectaFeira** será desenvolvido utilizando tecnologias modernas e 
 - **JWT (JSON Web Token)** – Autenticação e autorização segura.  
 
 ### 🔹 Banco de Dados
-- **MySQL** – Banco de dados relacional, já familiar para a equipe, garantindo robustez e confiabilidade.  
+- **MySQL** – Banco de dados relacional, robusto e confiável.  
 - **Sequelize ORM** – Abstração para modelagem de dados e integração com o MySQL.  
+ 
 
 ### 🔹 Outras Ferramentas
 - **Docker** – Containerização para padronizar ambientes de desenvolvimento e produção.  
