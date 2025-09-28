@@ -146,8 +146,9 @@ erDiagram
 
     CONSUMIDOR ||--o{ AVALIACAO : "faz"
 ```
-## 📑 Dicionário de Dados
 ---
+## 📑 Dicionário de Dados
+
 ### Tabela: Usuarios
 | Campo        | Tipo        | Tamanho | Nulo | Chave | Descrição |
 |--------------|-------------|---------|------|-------|-----------|

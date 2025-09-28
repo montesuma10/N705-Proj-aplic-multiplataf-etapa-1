@@ -27,6 +27,18 @@ Todos os endpoints estarão versionados em `/api/v1`.
   "perfil": "feirante"
 }`
 ```
+**Exemplo de Chamada:**
+```bash
+curl -X POST http://localhost:3000/api/v1/auth/signup \
+-H "Content-Type: application/json" \
+-d '{
+  "nome": "João Silva",
+  "email": "joao@email.com",
+  "senha": "123456",
+  "perfil": "feirante"
+}'
+```
+
 ### POST `/api/v1/auth/login`
  - **Descrição:** Realiza login e retorna token JWT.
  - **Corpo (JSON):**
@@ -42,6 +54,15 @@ Todos os endpoints estarão versionados em `/api/v1`.
  "token": "eyJhbGciOiJIUzI1NiIsInR..."
  }
  ``` 
+ **Exemplo de chamada:**
+ ```bash
+ curl -X POST http://localhost:3000/api/v1/auth/login \
+-H "Content-Type: application/json" \
+-d '{
+  "email": "joao@email.com",
+  "senha": "123456"
+}'
+```
 
  🔹Feiras
  ### GET `/api/v1/feiras`
@@ -59,6 +80,10 @@ Todos os endpoints estarão versionados em `/api/v1`.
     }
  ]
  ```
+  **Exemplo de chamada:**
+ ```bash
+ curl -X GET http://localhost:3000/api/v1/feiras
+```
   ### POST `/api/v1/feiras` (Admin)
  - **Descrição:** Cadastra nova feira.
 -  **Corpo (JSON):**
@@ -71,6 +96,19 @@ Todos os endpoints estarão versionados em `/api/v1`.
   "horario_funcionamento": "06:00 - 12:00"
 }
  ```
+  **Exemplo de chamada:**
+ ```bash
+ curl -X POST http://localhost:3000/api/v1/feiras \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer <token>" \
+-d '{
+  "nome": "Feira da Parangaba",
+  "endereco": "Av. Central, 500",
+  "bairro": "Parangaba",
+  "cidade": "Fortaleza",
+  "horario_funcionamento": "06:00 - 12:00"
+}'
+```
  
   🔹Feirantes
  ### POST `/api/v1/feirantes`
@@ -84,6 +122,17 @@ Todos os endpoints estarão versionados em `/api/v1`.
   "senha": "123456"
  }
 ```
+**Exemplo de chamada:**
+ ```bash
+ curl -X POST http://localhost:3000/api/v1/feirantes \
+-H "Content-Type: application/json" \
+-d '{
+  "nome": "Maria Souza",
+  "email": "maria@email.com",
+  "telefone": "85999999999",
+  "senha": "123456"
+}'
+```
  ### GET `/api/v1/feirantes/:id`
  - **Descrição:** Retorna dados do feirante.
  - **Resposta (200):**
@@ -95,6 +144,10 @@ Todos os endpoints estarão versionados em `/api/v1`.
   "telefone": "85999999999",
   "status": "ativo"
  }
+ ```
+ **Exemplo de chamada:**
+ ```bash
+ curl -X GET http://localhost:3000/api/v1/feirantes/1
  ```
  🔹Produtos
   ### POST `/api/v1/produtos`
@@ -109,6 +162,20 @@ Todos os endpoints estarão versionados em `/api/v1`.
   "id_feirante": 1
  }
  ```
+ **Exemplo de chamada:**
+ ```bash
+ curl -X POST http://localhost:3000/api/v1/produtos \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer <token>" \
+-d '{
+  "nome": "Tomate",
+  "categoria": "Hortaliça",
+  "descricao": "Tomate orgânico fresco",
+  "preco_medio": 5.00,
+  "id_feirante": 1
+}'
+```
+ 
   ### GET `/api/v1/produtos?nome=tomate&data;=2025-09-21`
  - **Descrição:** Busca produtos pelo nome e retorna feirantes que os oferecem no dia.
  - **Resposta (200):**
@@ -123,6 +190,10 @@ Todos os endpoints estarão versionados em `/api/v1`.
     }
  ]
  ```
+**Exemplo de chamada:**
+ ```bash
+ curl -X GET "http://localhost:3000/api/v1/produtos?nome=tomate&data=2025-09-21"
+```
  
  🔹Agenda do Feirante
  ### POST `/api/v1/agendas`
@@ -135,6 +206,17 @@ Todos os endpoints estarão versionados em `/api/v1`.
   "dia_semana": "terça"
  }
  ```
+ **Exemplo de chamada:**
+ ```bash
+ curl -X POST http://localhost:3000/api/v1/agendas \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer <token>" \
+-d '{
+  "id_feirante": 1,
+  "id_feira": 2,
+  "dia_semana": "terça"
+}'
+```
  ### GET `/api/v1/agendas/feirante/:id`
  - **Descrição:** Retorna agenda de um feirante.
 -  **Resposta (200):**
@@ -146,6 +228,10 @@ Todos os endpoints estarão versionados em `/api/v1`.
   }
  ]
  ```
+  **Exemplo de chamada:**
+ ```bash
+ curl -X GET http://localhost:3000/api/v1/agendas/feirante/1
+```
  🔹Check-in Diário
  ### POST `/api/v1/checkins`
  - **Descrição:** Feirante realiza check-in em uma feira.
@@ -158,6 +244,18 @@ Todos os endpoints estarão versionados em `/api/v1`.
   "produtos_disponiveis": ["Tomate", "Cebola", "Alface"]
  }
  ```
+   **Exemplo de chamada:**
+ ```bash
+ curl -X POST http://localhost:3000/api/v1/checkins \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer <token>" \
+-d '{
+  "id_feirante": 1,
+  "id_feira": 2,
+  "data": "2025-09-21",
+  "produtos_disponiveis": ["Tomate", "Cebola", "Alface"]
+}'
+```
  ### GET `/api/v1/checkins?feiraId=2&data;=2025-09-21`
 -  **Descrição:** Lista feirantes presentes em uma feira na data especificada.
  - **Resposta (200):**
@@ -169,6 +267,10 @@ Todos os endpoints estarão versionados em `/api/v1`.
   }
  ]
  ```
+  **Exemplo de chamada:**
+ ```bash
+ curl -X GET "http://localhost:3000/api/v1/checkins?feiraId=2&data=2025-09-21"
+```
  
  🔹Avaliações
  ### POST `/api/v1/avaliacoes`
@@ -182,6 +284,18 @@ Todos os endpoints estarão versionados em `/api/v1`.
   "comentario": "Produtos frescos e ótimo atendimento"
  }
  ```
+   **Exemplo de chamada:**
+ ```bash
+ curl -X POST http://localhost:3000/api/v1/avaliacoes \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer <token>" \
+-d '{
+  "id_consumidor": 3,
+  "id_feirante": 1,
+  "nota": 5,
+  "comentario": "Produtos frescos e ótimo atendimento"
+}'
+```
  ### GET `/api/v1/avaliacoes/feirante/:id`
  - **Descrição:** Retorna todas as avaliações de um feirante.
  - **Resposta (200):**
@@ -195,6 +309,10 @@ Todos os endpoints estarão versionados em `/api/v1`.
   }
  ]
  ```
+  **Exemplo de chamada:**
+ ```
+ curl -X GET http://localhost:3000/api/v1/avaliacoes/feirante/1
+```
  ## 
  - Considerações Gerais- Todas as rotas protegidas exigem envio do token JWT no cabeçalho:
  ```makelif
