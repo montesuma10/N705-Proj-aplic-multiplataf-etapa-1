@@ -81,22 +81,30 @@ Desenvolver um sistema multiplataforma que conecte feirantes e consumidores, per
 
 ## 🏗️ Visão Geral da Arquitetura
 
-A arquitetura do **ConectaFeira** segue o modelo **cliente-servidor** baseado em APIs RESTful.  
-Ela é composta por três camadas principais:
+# 🏛️ Arquitetura do Sistema - ConectaFeira
 
-- **Frontend Web (React.js + Tailwind CSS):**  
-  Interface administrativa para cadastro e gestão de feiras, feirantes e produtos.  
-
-- **Aplicativo Mobile (React Native / Android Studio):**  
-  Voltado para consumidores e feirantes, permitindo busca de produtos, check-in diário e avaliação.  
-
-- **Backend (Node.js + Express + MySQL):**  
-  API centralizada responsável por autenticação, regras de negócio e persistência de dados.  
+## 🔹 Descrição da Arquitetura
+O sistema **ConectaFeira** adota uma arquitetura baseada no padrão **cliente-servidor** e **API RESTful**, separando claramente frontend, backend e banco de dados.  
+Essa abordagem garante **escalabilidade**, **facilidade de manutenção** e **flexibilidade** para evoluir tanto o aplicativo mobile quanto a aplicação web.
 
 ---
 
-### 🔹 Diagrama da Arquitetura
+## 🔹 Componentes do Sistema
+- **Frontend Web (React.js + Tailwind CSS):** Interface voltada para administradores e consumidores.  
+- **Aplicativo Mobile (React Native / Expo):** Interface para consumidores e feirantes (cadastro de produtos, agenda, check-in e avaliações).  
+- **Backend (Node.js + Express):** API RESTful responsável pela autenticação, regras de negócio e comunicação com o banco de dados.  
+- **Banco de Dados (MySQL):** Armazena informações de usuários, feiras, feirantes, produtos, agendas, check-ins e avaliações.  
 
+---
+
+## 🔹 Padrões Arquiteturais Utilizados
+- **RESTful API:** Comunicação entre cliente (web/mobile) e servidor.  
+- **MVC (Model-View-Controller):** Organização interna do backend, separando responsabilidades.  
+- **Autenticação JWT:** Controle de acesso seguro em rotas protegidas.  
+
+---
+
+## 🔹 Diagrama de Arquitetura
 ```mermaid
 flowchart LR
     subgraph MobileApp["📱 Aplicativo Mobile (React Native)"]
@@ -123,6 +131,7 @@ flowchart LR
     MobileApp --> Backend
     WebApp --> Backend
     Backend --> Database
+
 ```
 ---
 ## 💻 Tecnologias Propostas
